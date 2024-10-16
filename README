@@ -84,4 +84,4 @@ This project is licensed under the MIT License.
 
 Notes:
 Admin Setup: You need to update the admins array in the code with the Telegram IDs of the admins who can use special commands.
-MongoDB Setup: Ensure your MongoDB database is set up and the connection string is correctly provided in the .env file.
+
