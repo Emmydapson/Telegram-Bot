@@ -1,0 +1,87 @@
+🎰 Telegram  spin Bot Telegram Project
+
+This project is a Telegram Bot that allows users to spin every hour and accumulate points, view leaderboards, invite friends, and maintain daily streaks. The bot is built with Node.js, uses MongoDB as the database, and features a simple gamification system.
+
+Features
+🎰 Spin Mechanism: Users can spin once per hour to earn points, with a 10% chance for a bonus spin.
+🏆 Leaderboard: Displays the top 10 users with the most points.
+👥 Invite Friends: Users can invite friends to the bot, track referrals, and earn bonuses for referrals.
+🔄 Daily Streaks: Users are rewarded for maintaining consecutive daily spins with streak bonuses.
+⚙️ Admin Features: Commands to reset points, ban users, broadcast messages, and view bot statistics.
+⏰ Daily Reminder: Sends users a reminder to spin every 24 hours.
+Table of Contents
+Features
+Installation
+Usage
+Commands
+Project Structure
+Technologies
+License
+Installation
+Clone the repository:
+
+bash
+Copy code
+git clone <https://github.com/Emmydapson/Telegram-Bot.git>
+cd spin-bot
+Install dependencies:
+
+bash
+Copy code
+npm install
+Set up environment variables by creating a .env file in the root directory:
+
+makefile
+Copy code
+TELEGRAM_TOKEN=your_telegram_bot_token
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+Start the server:
+
+bash
+Copy code
+npm start
+Usage
+Basic Commands
+/start: Initializes the bot and displays a menu with available options (Spin, Leaderboard, Invite Friends, Help).
+🎰 Spin: Spins to earn random points with a cooldown of one hour.
+🏆 Leaderboard: Shows the top 10 users ranked by points.
+👥 Invite Friends: Generates a unique referral link to invite others to the bot.
+ℹ️ Help: Lists all available commands for users.
+Admin Commands
+/resetpoints <telegramId>: Resets a user's points to 0.
+/banuser <telegramId>: Bans a user from the bot.
+/broadcast <message>: Sends a message to all bot users.
+/stats: Displays bot statistics, including total users and total points distributed.
+Daily Reminder
+A reminder message is sent to all users daily to remind them to maintain their streaks by spinning.
+
+Project Structure
+plaintext
+Copy code
+📦 Telegram-Bot
+ ┣ 📂 config
+ ┃ ┗ 📜 db.js            # MongoDB connection configuration
+ ┣ 📂 models
+ ┃ ┗ 📜 User.js          # Mongoose User schema for MongoDB
+ ┣ 📂 node_modules       # Project dependencies (auto-generated)
+ ┣ 📂 public             # Public assets (if needed)
+ ┣ 📂 routes
+ ┃ ┗ 📜 api.js           # Placeholder for future API routes
+ ┣ 📜 .env               # Environment variables (not committed)
+ ┣ 📜 index.js           # Main server and bot logic
+ ┣ 📜 package.json       # Project metadata and dependencies
+ ┗ 📜 README.md          # Project documentation (this file)
+Technologies
+Node.js: Backend framework used to create the Telegram bot and API.
+Express.js: Lightweight web framework for handling HTTP requests.
+MongoDB: NoSQL database to store user data, points, and streaks.
+Mongoose: ODM to interact with MongoDB.
+Telegram Bot API: The official Telegram API to create bot functionality.
+node-cron: Task scheduling for the daily reminder system.
+License
+This project is licensed under the MIT License.
+
+Notes:
+Admin Setup: You need to update the admins array in the code with the Telegram IDs of the admins who can use special commands.
+MongoDB Setup: Ensure your MongoDB database is set up and the connection string is correctly provided in the .env file.
